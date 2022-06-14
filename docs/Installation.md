@@ -110,7 +110,7 @@ pip3 install pyyaml catkin_pkg netifaces pathlib filelock pyqt5 mpi4py torch lxm
 ````
 cd $HOME
 mkdir -p arena_ws/src && cd arena_ws/src
-git clone https://github.com/ignc-research/arena-rosnav -b noetic-devel
+git clone https://github.com/flameryx/arena-rosnav -b noetic-devel
 
 cd arena-rosnav && rosws update
 source $HOME/.bashrc
