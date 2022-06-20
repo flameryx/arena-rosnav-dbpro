@@ -29,6 +29,7 @@ from pedsim_msgs.msg import Ped
 from pedsim_msgs.msg import InteractiveObstacle
 from pedsim_msgs.msg import LineObstacles
 from pedsim_msgs.msg import LineObstacle
+from std_msgs.msg import Int32
 
 import sys
 
@@ -326,6 +327,7 @@ class ScenerioTask(ABSTask):
                 # use can set "repeats" to a non-positive value to disable the scenerio
 
                 if scenerio_data["repeats"] > 0:
+
                     # set obstacles
                     self.obstacles_manager.remove_obstacles()
                     watchers_dict = scenerio_data.setdefault("watchers", [])
@@ -362,6 +364,7 @@ class ScenerioTask(ABSTask):
                                         f"For dynamic obstacle [{obstacle_name}] the trigger: {trigger} not found in the corresponding 'watchers' dict for scene {scenerio_name} "
                                     )
                                 trigger_zones.append(watchers_dict[trigger]["pos"] + [watchers_dict[trigger]["range"]])
+
                         self.obstacles_manager.register_dynamic_obstacle_circle_tween2(
                             obstacle_name,
                             obstacle_radius,

@@ -20,6 +20,7 @@
   <arg name="enable_pedsim" default="true"/>
   <arg name="task_mode" default="scenario" doc="[random, manual, staged, scenario]"/>
 
+
   <!-- To make the training more efficient make sure this step_size*laser_update_rate == 1  -->
   <arg name="step_size" default="0.01"/>
   <arg name="update_rate" default="500"/>
