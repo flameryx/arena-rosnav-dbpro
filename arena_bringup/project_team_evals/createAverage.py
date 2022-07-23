@@ -30,7 +30,7 @@ class RecordedAverage:
         warnings.filterwarnings("ignore")
         pathName = str(sys.argv)
 
-        for fileName in glob.glob('/home/alex-ubuntu/arena_ws/src/forks/arena-evaluation/01_recording/*.csv'):
+        for fileName in glob.glob('/home/flameryx/arena_ws/src/forks/arena-evaluation/01_recording/*.csv'):
             print("Currently working on: ",fileName)
             RecordedAverage.episodeAverages = RecordedAverage.initCSVDf()
 

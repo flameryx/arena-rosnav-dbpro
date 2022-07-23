@@ -1,13 +1,13 @@
 local_planners=("rosnav")
 robot_models=("burger")
-project_maps=("map_24")
+project_maps=("aws_house")
 
 min_dyn_vel="0.2"
 max_dyn_vel="0.8"
 min_dyn_radius="0.2"
-max_dyn_radius="0.9"
+max_dyn_radius="0.4"
 min_static_radius="0.5"
-max_static_radius="2"
+max_static_radius="1"
 
 for planner in "${local_planners[@]}"; 
 do for robot in "${robot_models}";
