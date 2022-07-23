@@ -1,6 +1,6 @@
 local_planners=("rosnav" "mpc" "dwa" "teb" "rlca")
 robot_models=("burger" "jackal" "ridgeback" "agvota")
-project_maps=`ls ../simulator_setup/maps | grep "map_[[:digit:]][[:digit:]]"`
+project_maps=`ls ../simulator_setup/maps | grep -m 100 "map"`
 
 min_dyn_vel="0.2"
 max_dyn_vel="0.8"
