@@ -1,13 +1,14 @@
 import pandas as pd
-import numpy as np
-from sklearn.preprocessing import OneHotEncoder
 import glob
 import sys
 import warnings
+import pathlib as pl
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 class RecordedAverage:
 
     episodeAverages = pd.DataFrame()
+
 
     def initCSVDf():
         lst = list(range(0,20))
@@ -27,11 +28,22 @@ class RecordedAverage:
         return df
 
     def createAverages():
-        warnings.filterwarnings("ignore")
-        pathName = str(sys.argv)
+        commandLineArguments = sys.argv
+        pathToCSV = commandLineArguments[1]
+        outputPath = "{}/CSVaverages/".format(pathToCSV)
+        print("")
+        print(outputPath)
+        print("")
+        path = pl.Path(outputPath)
+        path.mkdir(parents=True)
 
-        for fileName in glob.glob('/home/flameryx/arena_ws/src/forks/arena-evaluation/01_recording/*.csv'):
-            print("Currently working on: ",fileName)
+
+        if(len(commandLineArguments) != 2):
+            print("Wrong command line arguments. Please specify the path to the directory containing the CSV files")
+        print("path to the directory containing the CSV files:", pathToCSV)    
+
+        for fileName in glob.glob('{}*.csv'.format(pathToCSV)):
+            print("Currently working on:",fileName)
             RecordedAverage.episodeAverages = RecordedAverage.initCSVDf()
 
             data = pd.read_csv(fileName)
@@ -43,7 +55,7 @@ class RecordedAverage:
         
             csvAverage = RecordedAverage.calculateCSVAverage(RecordedAverage.episodeAverages)
 
-            csvFilename = "averages.csv"
+            csvFilename = "{}/averages.csv".format(outputPath)
             with open(csvFilename, 'a') as f:
                 csvAverage.to_csv(f, mode='a', header=f.tell()==0, index=False)
             
