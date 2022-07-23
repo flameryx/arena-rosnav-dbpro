@@ -1,7 +1,7 @@
 local_planners=("dwa")
 robot_models=("burger")
-project_maps=("aws_house" "bookstore" "evaluation_floor" "experiment_room_2" "experiment_room_3")
-num_dynamic_obs=("5" "10")
+project_maps=("map1" "map2" "map3" "map4" "map5")
+num_dynamic_obs=("10")
 
 num_static_obs="0"
 min_dyn_vel="0.1"
