@@ -1,7 +1,7 @@
 local_planners=("dwa")
 robot_models=("burger")
 project_maps=project_maps=($(ls ../../simulator_setup/maps | grep -m 75 "map" | tail -n 25))
-num_dynamic_obs=("5" "10")
+num_dynamic_obs=("5")
 
 num_static_obs="0"
 min_dyn_vel="0.1"
