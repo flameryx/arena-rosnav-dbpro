@@ -32,7 +32,7 @@
   <arg name="step_size" default="0.1"/>
   <arg name="update_rate" default="5000"/>
   <arg name="show_viz" default="true"/>
-  <arg name="viz_pub_rate" default="300" />
+  <arg name="viz_pub_rate" default="500" />
   <arg name="use_rviz" default="true"/>
 
   <param name="local_planner" value="$(arg local_planner)"/>
