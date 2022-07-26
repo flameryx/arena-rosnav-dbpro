@@ -1,6 +1,7 @@
 local_planners=("dwa")
 robot_models=("burger")
-project_maps=($(ls ../../simulator_setup/maps | grep -m 100 "map" | tail -n 25))
+# project_maps=($(ls ../../simulator_setup/maps | grep -m 100 "map" | tail -n 25))
+project_maps=("map157")
 num_dynamic_obs=("5")
 
 num_static_obs="0"
